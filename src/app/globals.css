@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(900px circle at top, #052e24, #050d0a 65%);
+    color: #ecfdf5;
+}
+
+/* emerald glow */
+.emerald-glow {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.emerald-glow:hover {
+    box-shadow:
+        0 10px 30px rgba(52, 211, 153, 0.28),
+        inset 0 0 12px rgba(52, 211, 153, 0.25);
+}
+
+/* ambient floating */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.ambient-glow {
+    animation: float 14s ease-in-out infinite;
 }
