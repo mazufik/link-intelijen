@@ -101,6 +101,8 @@ export default function DropdownLink({
                             <a
                                 key={i}
                                 href={c.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 onClick={onClose}
                                 className="
                                 block px-6 py-3 text-sm

@@ -8,6 +8,8 @@ export default function LinkButton({ title, href, onClick }: Props) {
     return (
         <a
             href={href}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={onClick}
             className="
             emerald-glow w-full rounded-full
