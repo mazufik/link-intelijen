@@ -1,4 +1,15 @@
 import "./globals.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "SubDit Intelijen",
+    description: "Pelaporan Intelijen Pemasyarakatan",
+    icons: {
+        icon: "/icon.png",
+        shortcut: "/favicon.ico",
+        apple: "/icon.png",
+    },
+};
 
 export default function RootLayout({
     children,
