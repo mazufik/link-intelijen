@@ -5,9 +5,9 @@ export const metadata: Metadata = {
     title: "SubDit Intelijen",
     description: "Pelaporan Intelijen Pemasyarakatan",
     icons: {
-        icon: "/icon.png",
+        icon: "/logo.png",
         shortcut: "/favicon.ico",
-        apple: "/icon.png",
+        apple: "/logo.png",
     },
 };
 
