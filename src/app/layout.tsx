@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     description: "Pelaporan Intelijen Pemasyarakatan",
     icons: {
         icon: "/logo.png",
-        shortcut: "/favicon.ico",
+        shortcut: "/logo.png",
         apple: "/logo.png",
     },
 };
