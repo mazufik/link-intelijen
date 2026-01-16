@@ -8,28 +8,28 @@ body {
 
 /* emerald glow */
 .emerald-glow {
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.35s ease;
 }
 
 .emerald-glow:hover {
     box-shadow:
-        0 10px 30px rgba(52, 211, 153, 0.28),
-        inset 0 0 12px rgba(52, 211, 153, 0.25);
+        0 12px 35px rgba(52, 211, 153, 0.35),
+        inset 0 0 14px rgba(52, 211, 153, 0.35);
 }
 
 /* ambient floating */
 @keyframes float {
-    0% {
+    0%,
+    100% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0);
+        transform: translateY(-18px);
     }
 }
 
 .ambient-glow {
-    animation: float 14s ease-in-out infinite;
+    animation: float 16s ease-in-out infinite;
 }

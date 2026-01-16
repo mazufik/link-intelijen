@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Image from "next/image";
 import { links } from "@/data/links";
 import LinkButton from "./LinkButton";
@@ -9,10 +9,15 @@ import DropdownLink from "./DropdownLink";
 export default function ProfileCard() {
     const [active, setActive] = useState<number | null>(null);
 
+    const toggle = useCallback(
+        (i: number) => setActive((prev) => (prev === i ? null : i)),
+        [],
+    );
+
     return (
         <div
             className="
-            relative w-full max-w-md
+            w-full max-w-md
             rounded-[32px]
             bg-gradient-to-b from-white/10 to-white/5
             backdrop-blur-2xl
@@ -22,16 +27,16 @@ export default function ProfileCard() {
             text-center
         "
         >
-            {/* logo */}
             <div className="flex justify-center">
                 <div className="w-24 h-24 rounded-full p-[2px] bg-gradient-to-br from-emerald-400 to-emerald-600">
                     <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
                         <Image
                             src="/logo.png"
                             alt="Logo"
-                            width={100}
-                            height={100}
-                            className="rounded-full object-cover"
+                            width={96}
+                            height={96}
+                            priority
+                            className="rounded-full"
                         />
                     </div>
                 </div>
@@ -45,7 +50,7 @@ export default function ProfileCard() {
                 Pelaporan Intelijen Pemasyarakatan
             </p>
 
-            <div className="mt-6 mb-8 h-px bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent" />
+            <div className="my-6 h-px bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent" />
 
             <div className="flex flex-col gap-4 mb-10">
                 {links.map((l, i) =>
@@ -55,7 +60,7 @@ export default function ProfileCard() {
                             title={l.title}
                             childrenLinks={l.children}
                             isOpen={active === i}
-                            onToggle={() => setActive(active === i ? null : i)}
+                            onToggle={() => toggle(i)}
                             onClose={() => setActive(null)}
                         />
                     ) : (
